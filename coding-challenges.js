@@ -217,3 +217,47 @@ function recordsModifier2(id, props, action) {
 // console.log();
 // console.log(recordsModifier2(5439, {}, 'delete')) // works
 
+// 3 - Look Up
+
+let contacts = [
+    {
+        'First Name': 'Akira',
+        'Last Name': 'Laine',
+        number: '0543236543',
+        likes: ['Pizza','Coding','Brownie Points']
+    },
+    {
+        'First Name': 'Harry',
+        'Last Name': 'Potter',
+        number: '0993233543',
+        likes: ['Hogwarts','Magic','Hagrid']
+    },
+    {
+        'First Name': 'Sherlock',
+        'Last Name': 'Holmes',
+        number: '0469583739',
+        likes: ['Intriguing Cases','violin']
+    },
+    {
+        'First Name': 'Kristian',
+        'Last Name': 'Vos',
+        number: 'unknown',
+        likes: ['JavaScript','Gaming','Foxes']
+    },
+] 
+
+// receives first or last name and another property about the person and returns the value of that property
+const lookUpProfile = (name, prop) => {
+    let result = `${name} Does Not Exist`
+    for (const contact of contacts) {
+        if (contact['First Name'] === name || contact['Last Name'] === name) {
+            if (!contact[prop]) {
+                return `${prop} Does Not Exist`
+            }
+            result = `${name}'s ${prop} ${prop == 'likes' ? 'are' : 'is'} ${prop !== 'likes' ? '\n' + contact[prop] : contact[prop].map(a => '\n- ' + a + '\n')}`
+        }
+    }
+    return result
+}
+
+// console.log(lookUpProfile('Kristian', 'likes'))
