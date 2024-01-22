@@ -260,4 +260,4 @@ const lookUpProfile = (name, prop) => {
     return `${name} Does Not Exist`
 }
 
-console.log(lookUpProfile('Kristian', 'likes'))
+// console.log(lookUpProfile('Kristian', 'likes'))
