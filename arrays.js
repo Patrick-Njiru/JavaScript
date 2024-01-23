@@ -1,3 +1,4 @@
+'use strict'
 // Arrays can contain all data types.
 let ourArray = ['h', 1, 12.4, null, undefined, true]
 // console.log(ourArray);
@@ -81,6 +82,13 @@ let arr1 = ['a','b','c'], arr2 = [1,2,3]
 // console.log(arr3);
 // console.log(arr1);
 
+// mutating arrays when you declare them using const
+
+const a = [1,2,4]
+// a = [2,4,5] // not allowed
+// console.log(a);
+a[0] = 2, a[1] = 4, a[2] = 5
+console.log(a);
 
 
 

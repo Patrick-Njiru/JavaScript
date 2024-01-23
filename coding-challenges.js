@@ -1,3 +1,4 @@
+'use strict'
 // 1 // Record Collection
 
 let collection = {

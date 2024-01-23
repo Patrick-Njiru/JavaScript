@@ -1,5 +1,22 @@
-//  Generate Random Fractions
+'use strict'
+// increment or decrement operator
+let x = 7
 
+x += 2 // x = x+2
+// console.log(x);
+x-- // x -=1
+x++ // x +=1
+x*=2 // x = x*2
+x/=3 // x = x/12
+
+// console.log(x);
+
+// Remainder
+
+// console.log(4%3); // % is called the remainder operator (modulus operator)
+
+
+//  Generate Random Fractions
 function randomFractions() {
     // Math.floor() eliminates the decimal places leaving the number as it is. Math.ceil() round the number to the next whole number
     console.log(`${Math.ceil(Math.random()*10)} / ${Math.floor(Math.random() * 20 + 1)}`)

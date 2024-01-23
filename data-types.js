@@ -1,3 +1,4 @@
+'use strict'
 // Data Types : undefined, null, boolean, symbol, number, string and object
 
 let a = null,

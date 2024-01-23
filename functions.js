@@ -1,3 +1,4 @@
+'use strict'
 // functions:
 function ourReusableFunction() {
     console.log('Hello Niggers!');
@@ -262,4 +263,61 @@ blackJackCC('Q') // count = -1
 blackJackCC(9) // count = -1
 blackJackCC('A') // count = -2
 
-console.log(blackJackCC(2)); // count(-2) + 1
+// console.log(blackJackCC(2)); // count(-2) + 1
+
+// Arrow functions are preferred for writing anonymous functions
+
+// const magic = function () {
+//     return new Date()
+// }
+
+/*
+    The above fn is anonymous because it lacks a name after the word function. 
+    To refactor it to an arrow function just click on it,  press CTRL + SHIFT + R and choose the option.
+    You can also refactor arrow functions in the same manner
+*/ 
+
+// const magic = () => new Date()
+
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2]
+
+// create a function that returns non-negative integers only - whole numbers
+
+const wholeNumbersSquareList = arr => arr.filter(num => num >= 0 && Number.isInteger(num)).map(num => num**2)
+
+// console.log(wholeNumbersSquareList(realNumberArray));
+
+
+// Creating a Self Calling function
+const callSelf = (function () {
+    console.log('Hello World!');
+})()
+
+
+// Default Parameters
+function increment(num = 0, val = 1) { //0 and 1 are the default values when the num and val inputs are not provided,
+    console.log(num + val);
+}
+
+// increment() // 1
+// increment(10) // 11
+// increment(10, 5) // 15
+
+// The Rest Operator
+// It is used when one passes multiple arguments a function
+// Instead of adding all parameters, one can just use the rest operator to simplify work.
+// It collects all arguments into an array which can then be accessed inside the function
+
+// Instead of
+function items1(a,b,c,d,e,f,g,h,i,j,k,l) {
+    return 'All iz Well'
+}
+// You can have. You can pass in any number of arguments
+const items2 = (...list) => {
+    return list
+}
+
+// console.log(items1(1,2,3,4,5,6,7,8,9,10,11,12));
+// console.log(items2(1,2,3,4,5,6,7,8,9,10,11,12));
+
+// The Rest

@@ -1,3 +1,4 @@
+'use strict'
 //Objects, like arrays can hold different data types.
 // The consist of key-value pairs
 let ourDog = {
@@ -145,6 +146,20 @@ let myStorage = {
 let gloveBoxContents = myStorage.car.inside['glove box']
 // console.log(gloveBoxContents) // maps
 
-let testObj1 = {}
+// preventing mutation of objects declared with const
 
-console.log(testObj1);
+const MATH_CONSTANTS = {
+ 'PI': 3.142,
+ 'Imaginary Unit': '0 + 1i'
+}
+
+// although we have used const, we can still mutate the above object as shown below
+// MATH_CONSTANTS['PI'] = 0
+// console.log(MATH_CONSTANTS);
+
+// to prevent this, we can freeze the object.
+
+Object.freeze(MATH_CONSTANTS)
+
+// MATH_CONSTANTS['PI'] = 0 // cannot reassing new value
+// console.log(MATH_CONSTANTS); 

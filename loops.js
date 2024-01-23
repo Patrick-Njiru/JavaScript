@@ -1,3 +1,4 @@
+'use strict'
 // While Loops
 
 let myArr = new Array // or []
