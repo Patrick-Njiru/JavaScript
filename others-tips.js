@@ -4,7 +4,8 @@
 // Differences between Rest and Spread Operator
 
 /*
-    Spread Operator expands an iterable - objects,arrays and strings - into its individual elements.
+    Spread Operator expands an iterable - objects,arrays and strings - into its individual elements
+    it is also used to make copies of objects and arrays
     
     Rest Operator collects multiple elements and condenses them into a single array.
 */
