@@ -1,5 +1,4 @@
 'use strict'
-// functions:
 function ourReusableFunction() {
     console.log('Hello Niggers!');
 }
@@ -7,7 +6,9 @@ function ourReusableFunction() {
 // ourReusableFunction() // calling the function
 // console.log();
 
-// Passing values to functions with arguments
+
+
+// PASSING INPUTS TO FUNCTIONS
 // parameters - variables that act as placeholders for values that are to be input to a function when it is called
 // Arguments are the actual values that are used as input to the function.
 
@@ -20,7 +21,9 @@ function subtract(a,b) {
 
 // subtract(3,4) // -1, 7, 13, .75
 
-// Scope and Functions
+
+
+// SCOPE AND FUNCTIONS
 // Scope refers to the visibility of a variable
 
 let myGloablVariable = 10 // global scope
@@ -40,7 +43,9 @@ const fun2 = () => {
 
 // fun2()
 
-// Global and Local Scope in Functions 
+
+
+// GLOBAL AND LOCAL SCOPE IN FUNCTIONS
 
 /* 
     It is possible to declare the same variable twice, outside and inside a function as shown below.
@@ -64,7 +69,9 @@ function add(a,b) {
 
 add(4,6) // return value = undefined 
 
-// Variable assignment with a returned value
+
+
+// VARIABLE ASSIGNMENT WITH A RETURN VALUE
 function evenOrOdd(x) {
     return x%2 === 0 ? `${x} is even` : `${x} is odd`
 }
@@ -73,7 +80,9 @@ function evenOrOdd(x) {
 let result = evenOrOdd(10)
 // console.log(result);
 
-// Queue
+
+
+// QUEUES
 const nextInLineOfThree = (arr, item) => {
     arr.push(item)
     return arr.shift()
@@ -90,7 +99,9 @@ let queueLine = ['John','Lucas','Joseph']
 // console.log(nextInLineOfThree(queueLine, 'Ann'));
 // console.log(`After ${JSON.stringify(queueLine)}`);
 
-// Boolean - TRUE or FALSE
+
+
+// BOOLEAN
 // mostly used with conditional statements like if else and ternary operators
 // Example 1
 function switchOnOrOff(answer) {
@@ -160,7 +171,8 @@ function studentMeanGrade1(score) {
 // console.log(studentMeanGrade1(73)); // B+
 // console.log(studentMeanGrade1(-10)); // Invalid score.
 
-// Using iF Statement,Switch Statement, and Or (||) Operator
+
+// IF STATEMENT, sWITCH STATEMENT, || OPERTATOR
 
 const clothePrice = item => {
     switch(item.toLocaleLowerCase()) {
@@ -288,13 +300,13 @@ const wholeNumbersSquareList = arr => arr.filter(num => num >= 0 && Number.isInt
 // console.log(wholeNumbersSquareList(realNumberArray));
 
 
-// Creating a Self Calling function
-const callSelf = (function () {
-    console.log('Hello World!');
-})()
+// SELF CALLING FUNCTIONS
+// const callSelf = (function () { // uncomment code and run code.
+//     console.log('Hello World!');
+// })()
 
 
-// Default Parameters
+// DEFAULT PARAMETERS
 function increment(num = 0, val = 1) { //0 and 1 are the default values when the num and val inputs are not provided,
     console.log(num + val);
 }
@@ -303,7 +315,8 @@ function increment(num = 0, val = 1) { //0 and 1 are the default values when the
 // increment(10) // 11
 // increment(10, 5) // 15
 
-// The Rest Operator
+
+// THE REST OPERATOR
 // It is used when one passes multiple arguments a function
 // Instead of adding all parameters, one can just use the rest operator to simplify work.
 // It collects all arguments into an array which can then be accessed inside the function
@@ -313,11 +326,7 @@ function items1(a,b,c,d,e,f,g,h,i,j,k,l) {
     return 'All iz Well'
 }
 // You can have. You can pass in any number of arguments
-const items2 = (...list) => {
-    return list
-}
+const items2 = (...list) => list
 
 // console.log(items1(1,2,3,4,5,6,7,8,9,10,11,12));
 // console.log(items2(1,2,3,4,5,6,7,8,9,10,11,12));
-
-// The Rest

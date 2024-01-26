@@ -1,5 +1,5 @@
 'use strict'
-// 1 // Record Collection
+// 1. RECORDS MODIFICATION
 
 let collection = {
     2548: {
@@ -34,6 +34,8 @@ let collection = {
 let collectionCopy = {...collection} // spread operator
 // console.log('copy', collectionCopy);
 
+
+// AA
 const updateRecords = (id, prop, value) => {
     // Assumptions
     /*
@@ -57,6 +59,9 @@ const updateRecords = (id, prop, value) => {
 
 // Now a CRUD - Create, Read, Update, Delete - Record
 // function recordsModifier1(id, property='', value='', operation) { // the empty string are placeholder arguments in case no values are provided
+
+
+// BB
 // function recordsModifier1(id, property='', value='') { // the empty string are placeholder arguments in case no values are provided
 //     let operation, result, confirmation
 
@@ -122,6 +127,8 @@ const updateRecords = (id, prop, value) => {
 
 // console.log(collection);
 
+
+// CC
 function recordsModifier2(id, props, action) {
         
     // Only accept positive integers
@@ -218,7 +225,9 @@ function recordsModifier2(id, props, action) {
 // console.log();
 // console.log(recordsModifier2(5439, {}, 'delete')) // works
 
-// 3 - Look Up
+
+
+// 2. LOOK UP
 
 let contacts = [
     {
@@ -262,3 +271,164 @@ const lookUpProfile = (name, prop) => {
 }
 
 // console.log(lookUpProfile('Kristian', 'likes'))
+
+
+
+//  3. TEMPLATE LITERALS
+
+const result = {
+    success: [ 'max-length', 'no-amd', 'prefer-arrow-functions' ],
+    failure: [ 'no-var', 'var-on-top', 'linebreak' ],
+    skipped: [ 'id-blacklist', 'no-dup-keys' ]
+}
+
+function makeList(arr) {
+    let resultDisplayArray = arr.map(i => `<li class='text-warning'> ${i} </li>`)
+
+    return resultDisplayArray
+}
+
+// console.log(makeList(result.success))
+
+
+
+// 4. CREATE AN OBJECT FROM FUNCTION INPUTS
+// if the parameter names are to be used as keys of the object. you don't have to repeat yourself
+const createPerson = (name, age, gender) => ({ name, age, gender})
+
+// console.log(crea tePerson('Peter Parker', 21, 'male'));
+
+
+
+// 5. PERSONAL CODE CHALLENGE -CREATE A MOVIE OBJECT USING THE CLASS SYNTAX WITH GETTER AND SETTER METHODS
+
+class Movie {
+    constructor(title, ...topActors) {
+        this.title = title
+        this._topActors = topActors
+        this._productionYear = 'Not provided'
+        this._duration = 'Not provided'
+        this._summary = '... '
+        this._createdOn = `${new Date().getUTCDate()}-${new Date().getMonth()}-${new Date().getUTCFullYear()} at ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} Hours`
+    }
+    // Getters - Read
+    get actors() {
+        return this._topActors
+    }
+
+    get productionYear() {
+        return this._productionYear
+    }
+
+    get duration() {
+        return this._duration
+    }
+
+    get summary() {
+        return this._summary
+    }
+    // Setters
+    // Create
+    set addActor(name) {
+        this._topActors.includes(name) ?
+            console.log(`${name} already exists`) :
+            this._topActors.push(name)
+    }
+
+    // Update
+    set updateProductionYear(updatedYear) {
+        this._productionYear = updatedYear
+    }
+
+    set updateDuration(updatedDuration) {
+        this._duration = updatedDuration
+    }
+
+    set updateActor(numAndNewNameArray) {
+        this._topActors[numAndNewNameArray[0]-1] = numAndNewNameArray[1]
+    }
+
+    set newSummary(newSummary) {
+        !newSummary ?
+            console.log('Summary Cannot be Empty'):
+            typeof newSummary == 'string' ? 
+                this._summary = newSummary : 
+                console.log('Summary must be a string!');
+    }
+    
+    // Delete
+    set removeActor(name) {
+        // eliminating a value from an array using filter
+        this._topActors.includes(name) ?
+            this._topActors =  this._topActors.filter(actor => actor !== name) :
+            console.log('Actor does not exist');
+    }
+
+}
+
+let redNotice = new Movie ('Red Notice','Dwayne Johnson', 'un', 'Ryan Reynolds')
+
+// Works perfectly
+// redNotice.addActor = 'Gal Gadot'
+// redNotice.addActor = 'un' // actor already exists
+// redNotice.removeActor = 'Ryan Reynolds'
+// redNotice.updateDuration = 'about 2 hours'
+// redNotice.updateProductionYear = 2021
+// redNotice.newSummary = 'Will Update Soon ...'
+// redNotice.updateActor = [1, 'Dwayne The Rock Johnson']
+// console.log(redNotice); // entire object
+
+// console.log(redNotice.actors);
+// console.log(redNotice.productionYear);
+// console.log(redNotice.movieDuration);
+// console.log(redNotice.summary);
+
+// if you want add a last updated on feature and update it in all your setters
+
+
+
+// 6. OBJECTS CHALLENGE
+
+/* 
+    function makeClass() {
+        return Thermostat
+    }
+
+    let Thermostat = makeClass(),
+    thermos = new Thermostat(76),
+    temp = thermos.temperature
+
+    thermos.temperature = 25
+    temp = thermos.temperature
+    console.log(temp);
+*/
+
+function makeClass() {
+    class Thermostat {
+        constructor(temperature) {
+            this._temperature = ((temperature - 32)* 5/9).toFixed(2)+ '°C' // ALT + 0176 for the degree sybmol
+        }
+
+        get temperature() {
+            return this._temperature
+        }
+
+        set temperature(value) {
+            this._temperature = ((value - 32)* 5/9).toFixed(2)+ '°C'
+        }
+    }
+    return Thermostat
+}
+
+let Thermostat = makeClass(),
+    thermos = new Thermostat(76),
+    temp = thermos.temperature
+    // console.log(temp);
+
+    thermos.temperature = 25
+    temp = thermos.temperature
+    // console.log(temp);
+
+
+// let thermos = new Thermostat(72)
+// console.log(thermos.temperature);

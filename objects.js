@@ -1,6 +1,6 @@
 'use strict'
 //Objects, like arrays can hold different data types.
-// The consist of key-value pairs
+// They consist of key-value pairs
 let ourDog = {
     name: 'Camper',
     legs: 4,
@@ -11,8 +11,9 @@ let ourDog = {
 
 // console.log(`Dog Details \nName: ${ourDog.name}\t|\t Friends: ${ourDog.friends}`); // or ourDog['friends']
 
-// Bracket Notation Must Use Case
 
+
+// MUST USE CASE FOR BRACKET NOTATION
 let testObj = {
     'An entree': 'hamburger',
     'My side': 'veggies',
@@ -23,8 +24,9 @@ let testObj = {
 
 // console.log(testObj["The drink"], testObj[10]);
 
-// Accessing Object Properties using Variables.
 
+
+// ACCESSING OBJECT PROPERTIES USING VARIABLE.
 let footballers = {
     12: 'Namath',
     16: 'Montana',
@@ -42,19 +44,22 @@ ourDog.name = 'Bully'
 
 // console.log(ourDog, footballers);
 
-// Add New Properties to an Object
 
+
+// ADD NEW PROPERTIES TO AN OBJECT
 ourDog.age = 2
 footballers[7] = 'CR7'
 // console.log(ourDog, footballers);
 
-// Deleting Properties from an Object
 
+
+// DELETING PROPERTIES FROM AN OBJECT
 delete ourDog.herbivorous
 // console.log(ourDog.herbivorous); // undefined
 
-// Using Objects for Lookup
 
+
+// USING OBJECTS FOR LOOKUP
 function phoneticLookup(val) {
     let result = '',
     lookup = {
@@ -70,12 +75,15 @@ function phoneticLookup(val) {
 
 // console.log(phoneticLookup('ALPHA'))
 
-// Looping through objects
+
+
+// LOOPING THROUGH OBJECTS
 for (const trait in ourDog) {
         // console.log(`${trait} : ${ourDog[trait]}`)
 }
 
-// Testing Objects For Properties
+
+// TESTING OBJECTS FOR PROPERTIES
 const myObj = {
     gift: 'pony',
     pet: 'cat',
@@ -88,7 +96,9 @@ checkObj = checkprop => {
 
 // checkObj('pet')
 
-// Manipulating complex objects. 
+
+
+// MANIPULATING COMPLEX OBJECTS 
 // Accessing nested Objects and Arrays
 
 let myMusic = [
@@ -146,8 +156,9 @@ let myStorage = {
 let gloveBoxContents = myStorage.car.inside['glove box']
 // console.log(gloveBoxContents) // maps
 
-// preventing mutation of objects declared with const
 
+
+// PREVENTING MUTATION OF OBJECTS THAT ARE DECLARED USING CONST
 const MATH_CONSTANTS = {
  'PI': 3.142,
  'Imaginary Unit': '0 + 1i'
@@ -163,3 +174,37 @@ Object.freeze(MATH_CONSTANTS)
 
 // MATH_CONSTANTS['PI'] = 0 // cannot reassing new value
 // console.log(MATH_CONSTANTS); 
+
+
+
+// CREATE AN OBJECT FROM FUNCTION INPUTS
+// if the parameter names are to be used as keys of the object. you don't have to repeat yourself
+const createPerson = (name, age, gender) => ({ name, age, gender})
+
+// console.log(crea tePerson('Peter Parker', 21, 'male'));
+
+
+// WRITE CONCISE DECLARATIVE FUNCTIONS
+// An object can contain a function
+let bicycle = {
+    gear: 2,
+    setGear: function(newGear) {
+        'use strict'
+        this.gear = newGear
+    }
+}
+
+// bicycle.setGear(5)
+// console.log(bicycle.gear);
+// this can now be simplified and written as
+bicycle = {
+    gear: 2,
+    setGear(newGear) {
+        'use strict'
+        this.gear = newGear
+    }
+}
+
+// bicycle.setGear(3)
+// console.log(bicycle.gear);
+

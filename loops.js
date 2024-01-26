@@ -1,6 +1,6 @@
 'use strict'
-// While Loops
 
+// WHILE LOOPS
 let myArr = new Array // or []
 let myObj = new Object // {}
 
@@ -15,7 +15,8 @@ while(i < 5) {
 // console.log(myArr);
 
 
-// For Loops
+
+// FOR LOOPS
 for (let i = 0; i < myArr.length; i++) {
     myArr[i] = i+i
 }
@@ -28,7 +29,7 @@ for (const key in myObj) {
 }
 
 
-// For...Of Loop. Looping through Arrays
+// FOR...OF LOOPS. FOR ARRAYS
 console.log(`Index  :   Value`);
 for (const iterator of myArr) {
     // console.log(`${iterator/2}  -  ${iterator}`);
@@ -39,8 +40,9 @@ for (let i = 1; i < 20; i +=2) {
     // console.log(i);    
 }
 
-// Nesting for loops - for nested arrays and objects
 
+
+// NESTING FOR LOOPS - FOR NESTED OBJECTS/ARRAYS
 // 1
 const mutiplyAll1 = arr => {
     let product = 1
@@ -74,7 +76,7 @@ let product2 = mutiplyAll2([[1,2],[3,4],[5,6],[7]])
 console.log(product1, product1 === product2); // 5040
 
 
-// Do---While loops
+// DO...WHILE LOOPS
 /* 
     a do while loop, unlike the while loop, runs at least once
     before checking for the set condition(s) 

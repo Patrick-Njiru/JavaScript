@@ -96,3 +96,18 @@ const removeFirstTwo = list => {
 
 
 // PASS OBJECTS AS PARAMETERS
+
+const stats = {
+    max: 56.78,
+    standardDeviation: 4.34,
+    median: 34.54,
+    mode: 23.87,
+    min: -0.75,
+    average: 35.85
+}
+
+// will destructure the object only picking the min and max values as inputs.
+// Commonly used with API calls since it returns more info than you need.
+const half = ({ max, min }) => (max + min)/2
+
+// console.log(half(stats)); // 28.015

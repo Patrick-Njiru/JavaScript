@@ -3,7 +3,9 @@
 let ourArray = ['h', 1, 12.4, null, undefined, true]
 // console.log(ourArray);
 
-// Array containing objects
+
+
+// ARRAYS CONTAINING OBJECTS
 let objArray = [
     {
         name : "M.K.M",
@@ -18,7 +20,9 @@ let objArray = [
 ]
 // console.log(objArray);
 
-// Nested Array
+
+
+// NESTED ARRAYS
 let myNestedArray = [ourArray, objArray],
 myNestedArray2 = [[1,2,3], ['a','b','c']],
 // nesting level 2. You can go as far as you can comprehend
@@ -28,9 +32,9 @@ myNestedArray3 = [[ourArray], [objArray]]
 // console.log(myNestedArray2); 
 // console.log(myNestedArray3); 
 
-// google how to format console output to display nested objects and arrays better
 
-// Accessing  and Modifying elements within an array
+
+// MUTATING ARRAYS
 // console.log(ourArray[1]);
 // console.log(myNestedArray[0]); // in this case the elements are arrays
 
@@ -39,10 +43,12 @@ ourArray[1] = 'hello world!'
 
 
 
-// Accessing Array elements within a nested array
+// ACCESSING ELEMENTS IN NESTED ARRAYS - BRACKET NOTATION
 // console.log(myNestedArray[0][5]); // true
 
-// Array Methods - push, unshift , pop, shift, length
+
+
+// ARRAY METHODS - push, unshift , pop, shift, length
 // our array = [ 'h', 'hello world!', 12.4, null, undefined, true ]
 // console.log(ourArray.length)
 // Removing elements of the array
@@ -66,14 +72,16 @@ let shoppingList = [
 ]
 // console.log(shoppingList);
 
-// Looping through Arrays
+
+
+// LOOPING THROUGH ARRAYS
 // use for ... of ... loop
 
 for (const item of shoppingList) {
     // console.log(item)
 }
 
-// combining arrays
+// COMBINING arrays
 
 let arr1 = ['a','b','c'], arr2 = [1,2,3]
 // let arr3 = [...arr1, ...arr2] // spread operator for copying objects
@@ -82,7 +90,8 @@ let arr1 = ['a','b','c'], arr2 = [1,2,3]
 // console.log(arr3);
 // console.log(arr1);
 
-// mutating arrays when you declare them using const
+
+// MUTATING ARRAYS WHEN DECLARED USING CONST
 
 const a = [1,2,4]
 // a = [2,4,5] // not allowed

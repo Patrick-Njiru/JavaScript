@@ -1,11 +1,13 @@
 'use strict'
-// STRINGS- Escaping a quote character
+// ESCAPING A QUOTE CHARACTER
 
 let myStr = '<a href="https://www.example.com" target="_blank">Link</a>' 
 // console.log(myStr);
 
 myStr = `<a href="https://www.example.com" target='_blank'>Link</a>` // backticks
 // console.log(myStr);
+
+
 
 /*
 CODE OUTPUT
@@ -21,6 +23,8 @@ CODE OUTPUT
 
 myStr = `first line \n\t\\second line\nthirdline`
 // console.log(myStr );
+
+
 
 // STRING CONCATENATION
 let firstName = 'Patrick', middleName = 'Njiru', surName = "Kung'u"
@@ -46,8 +50,12 @@ str1 += str2
 myStr = 'My name is ' + firstName + ' ' + middleName + ' and I am well!'
 // console.log(myStr);
 
+
+
 // LENGTH OF A STRING
 // console.log(myStr.length);
+
+
 
 // FINDING CHARACTER IN A STRING
 let myInitials = firstName[0] + middleName[0] + surName[0] // indexing starts from 0
@@ -56,10 +64,14 @@ let myInitials = firstName[0] + middleName[0] + surName[0] // indexing starts fr
 lastLetterOfFirstName = firstName[firstName.length-1]
 // console.log(lastLetterOfFirstName);
 
+
+
 // STRING IMMUTABILITY
 firstName[0] = 'K'
 
 // console.log(firstName); // still remains Patrick. Cannot change individual characters of a string
+
+
 
 // WORD GAME (MADLIB)
 
